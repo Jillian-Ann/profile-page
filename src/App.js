@@ -1,26 +1,103 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Helmet from "react-helmet";
+
+import Header from "./components/Header";
+import Navbar from "./components/NavBar";
+import Intro from "./components/Intro";
+import WhatIDo from "./components/What-I-Do";
+import Gallery from "./components/Projects";
+import PrimaryProject from "./components/PrimaryProject";
+import SecondaryProject from "./components/SecondaryProjects";
+import "./App.css";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+import background from "./images/background.jpg";
+import { Parallax } from "react-parallax";
+
+const theme = createMuiTheme({
+  palette: {
+    type: "dark",
+    primary: {
+      main: "#86c7bf"
+    },
+    secondary: {
+      main: "#FFF6F4"
+    }
+  }
+});
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      lightboxIsOpen: false,
+      currentImage: 0
+    };
+
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.handleClickImage = this.handleClickImage.bind(this);
+  }
+
+  openLightbox(index, event) {
+    event.preventDefault();
+    this.setState({
+      currentImage: index,
+      lightboxIsOpen: true
+    });
+  }
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false
+    });
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1
+    });
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1
+    });
+  }
+  handleClickImage() {
+    if (this.state.currentImage === this.props.images.length - 1) return;
+
+    this.gotoNext();
+  }
   render() {
+    const siteTitle = "Jillian McLaren";
+    const siteDescription = "Profile Page";
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <Parallax bgImage={background} strength={500}>
+          <div style={{ backgroundColor: "#f1e0d3" }}>
+            <Helmet>
+              <title>{siteTitle}</title>
+              <meta name="description" content={siteDescription} />
+            </Helmet>
+            <div className="App" style={{ display: "flex" }}>
+              <div style={{ background: "white", flex: "1" }}>
+                <Header />
+              </div>
+              {/* <Navbar className="App-navbar" /> */}
+              <div style={{ padding: "40px", flex: "3" }}>
+                <Intro />
+                <PrimaryProject />
+                <SecondaryProject />
+                <Gallery />
+                <WhatIDo />
+              </div>
+            </div>
+          </div>
+        </Parallax>
+      </MuiThemeProvider>
     );
   }
 }

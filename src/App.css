@@ -1,5 +1,18 @@
+.App-header {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* -ms-behavior: url("assets/js/ie/backgroundsize.min.htc"); */
+}
+
+.avatar {
+  border-radius: _size(border-radius);
+  display: block;
+  border-radius: 100%;
+}
 .App {
-  text-align: center;
+  /* text-align: center; */
+  font-family: New Century Schoolbook;
 }
 
 .App-logo {
@@ -20,6 +33,18 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-navbar {
+  z-index: 2;
+}
+
+.App-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
 @keyframes App-logo-spin {
