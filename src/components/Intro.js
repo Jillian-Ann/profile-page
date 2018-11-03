@@ -11,28 +11,24 @@ class Intro extends React.Component {
           zIndex: 0
         }}
       >
+        <p>Jillian McLaren</p>
         <div
           style={{
-            padding: ".5em",
+            // padding: ".5em",
             position: "absolute",
-            // top: "2vh",
+            top: "10%",
+            left: "10%",
             color: "black",
             zIndex: "1",
-            fontSize: "4.3vw",
+            fontSize: "3vw",
             fontWeight: "400"
           }}
         >
           <p>
-            Environmentalist turned software engineer creating intuitive and
-            dynamic UIs inspired by nature.
+            Environmentalist turned software engineer <br />
+            creating intuitive and dynamic <br />
+            UIs inspired by nature.
           </p>
-          {/* <p style={{ fontSize: "2vw" }}>
-              Specializing in JavaScript and the NERD stack. <br />
-              Proficient: JavaScript, Node/Express, React, React-Redux,
-              Sequelize/PostgreSQL, Git, GitHub, CSS, HTML5, Material-UI <br />
-              Knowledgable: React-Native, React-Native-Navigation, jQuery,
-              Socket.io, SQL, Mocha, Jasmine, Chai, Heroku, Bootstrap
-            </p> */}
         </div>
       </div>
     );

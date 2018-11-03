@@ -75,29 +75,18 @@ class App extends Component {
     const siteDescription = "Profile Page";
 
     return (
-      <MuiThemeProvider theme={theme}>
-        <Parallax bgImage={background} strength={500}>
-          <div style={{ backgroundColor: "#f1e0d3" }}>
-            <Helmet>
-              <title>{siteTitle}</title>
-              <meta name="description" content={siteDescription} />
-            </Helmet>
-            <div className="App" style={{ display: "flex" }}>
-              <div style={{ background: "white", flex: "1" }}>
-                <Header />
-              </div>
-              {/* <Navbar className="App-navbar" /> */}
-              <div style={{ padding: "40px", flex: "3" }}>
-                <Intro />
-                <PrimaryProject />
-                <SecondaryProject />
-                <Gallery />
-                <WhatIDo />
-              </div>
-            </div>
-          </div>
-        </Parallax>
-      </MuiThemeProvider>
+      <div style={{ backgroundColor: "#f1e0d3" }}>
+        <Helmet>
+          <title>{siteTitle}</title>
+          <meta name="description" content={siteDescription} />
+        </Helmet>
+
+        <Intro />
+        <PrimaryProject />
+        <SecondaryProject />
+        <Gallery />
+        <WhatIDo />
+      </div>
     );
   }
 }

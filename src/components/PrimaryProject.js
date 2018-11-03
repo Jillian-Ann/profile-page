@@ -6,11 +6,12 @@ class PrimaryProject extends React.Component {
     return (
       <img
         style={{
+          margin: "0 5% 0 5%",
           transition: "transform 2s cubic",
           display: "block",
           border: "0",
           height: "auto",
-          width: "95%",
+          width: "90%",
           borderRadius: "1%"
         }}
         src={fullArtemis}
