@@ -5,30 +5,26 @@ class Intro extends React.Component {
     return (
       <div
         style={{
-          display: "flex",
-          height: "50vh",
-          justifyContent: "flex-start",
+          display: "block",
+          margin: "10%",
           zIndex: 0
         }}
       >
         <p>Jillian McLaren</p>
         <div
           style={{
-            // padding: ".5em",
-            position: "absolute",
+            position: "relative",
             top: "10%",
-            left: "10%",
-            color: "black",
-            zIndex: "1",
-            fontSize: "3vw",
-            fontWeight: "400"
+            // textTransform: "uppercase",
+            fontSize: "30px",
+            // lineHeight: "1em",
+            zIndex: "3"
           }}
         >
-          <p>
-            Environmentalist turned software engineer <br />
-            creating intuitive and dynamic <br />
-            UIs inspired by nature.
-          </p>
+          <h1>
+            Environmentalist turned software engineer creating intuitive and
+            dynamic UIs inspired by nature.
+          </h1>
         </div>
       </div>
     );

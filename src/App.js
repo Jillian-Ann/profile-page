@@ -8,6 +8,7 @@ import WhatIDo from "./components/What-I-Do";
 import Gallery from "./components/Projects";
 import PrimaryProject from "./components/PrimaryProject";
 import SecondaryProject from "./components/SecondaryProjects";
+import MyProjects from "./components/MyProjects";
 import "./App.css";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -75,17 +76,23 @@ class App extends Component {
     const siteDescription = "Profile Page";
 
     return (
-      <div style={{ backgroundColor: "#f1e0d3" }}>
+      <div
+        style={{
+          backgroundImage: background,
+          overflow: "visible"
+        }}
+      >
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
         </Helmet>
-
         <Intro />
-        <PrimaryProject />
+        <MyProjects />
+        <WhatIDo />
+        {/* <PrimaryProject />
         <SecondaryProject />
         <Gallery />
-        <WhatIDo />
+        <WhatIDo /> */}
       </div>
     );
   }
