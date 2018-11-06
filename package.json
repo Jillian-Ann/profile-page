@@ -17,7 +17,8 @@
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.19",
     "react-parallax": "^2.0.1",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "react-swipeable-views": "^0.13.0"
   },
   "scripts": {
     "start": "react-scripts start",
