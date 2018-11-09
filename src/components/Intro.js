@@ -6,11 +6,10 @@ class Intro extends React.Component {
       <div
         style={{
           display: "block",
-          margin: "10%",
+          margin: "15% 10% 10% 10%",
           zIndex: 0
         }}
       >
-        <p>Jillian McLaren</p>
         <div
           style={{
             position: "relative",
@@ -18,12 +17,19 @@ class Intro extends React.Component {
             // textTransform: "uppercase",
             fontSize: "30px",
             // lineHeight: "1em",
-            zIndex: "3"
+            zIndex: "3",
+            letterSpacing: "0.1em"
           }}
         >
           <h1>
-            Environmentalist turned software engineer creating intuitive and
-            dynamic UIs inspired by nature.
+            Environmentalist{" "}
+            <strong style={{ color: "#777777" }}>turned</strong> software
+            engineer{" "}
+            <strong style={{ color: "#777777" }}>
+              creating intuitive and dynamic{" "}
+            </strong>
+            UIs
+            <strong style={{ color: "#777777" }}> inspired by </strong> nature.
           </h1>
         </div>
       </div>

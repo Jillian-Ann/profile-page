@@ -4,6 +4,12 @@ import Stepper from "./Stepper";
 import ActionGTranslate from "material-ui/SvgIcon";
 import { Parallax } from "react-parallax";
 
+import IconButton from "@material-ui/core/IconButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+
 import artemis from "../images/fulls/artemis.jpg";
 import nutrivision from "../images/fulls/nutrivision.jpg";
 import bookhaven from "../images/fulls/bookhaven.jpg";
@@ -15,7 +21,7 @@ const projects = [
     id: "1",
     shortDesc: "Pandora for podcasts",
     fullDesc:
-      "Artemis is a podcast recommendation and streaming single page application. A user can search for a genre to create channels in which they can rate played episodes. The channel learns what the user likes and curates future content based off the user's feedback. Artemis was built with JavaScript and the NERD stack - Node, Express, React-Redux, Postgres/Sequelize. The k-nearest neighbors algorithm was implemented to power a collaborative recommendation filtering system and the TF-IDF(Term Frequency-Inverse Document Frequency) algorithm and the Natural library were used to extract relevant tag names to feed to the recommendation engine. When a user likes or dislikes an episode, the tag scores associated with the channel are increased or decreased. Users are then played episodes from channels with similar tag scores to theirs. To ensure a consistent user experience, we created a clean and simple user interface with Material-UI.",
+      "A podcast recommendation and streaming single page application. Users search for genres to create channels. Episodes falling under the channel's genre are rendered and users can either like or dilike played episodes. From this feedback, the app curates future content from a collaborative recommendation engine our team built, delivering content that caters to user's interests.",
     title: "Artemis"
   },
   {
@@ -36,24 +42,6 @@ const projects = [
     title: "Book Haven"
   }
 ];
-
-// const styles = theme => ({
-//   header: {
-//     display: "flex",
-//     alignItems: "center",
-//     height: 50,
-//     paddingLeft: theme.spacing.unit * 4,
-//     backgroundColor: theme.palette.background.default
-//   },
-//   img: {
-//     width: "100%",
-//     flex: "1",
-//     // marginLeft: "48px",
-//     position: "relative",
-//     zIndex: "2",
-//     borderRadius: "1%"
-//   }
-// });
 
 class Projects extends React.Component {
   constructor() {
@@ -87,7 +75,9 @@ class Projects extends React.Component {
       <div style={{ height: "100vh" }}>
         <section style={styles.section}>
           <div style={styles.div}>
-            <h2 style={styles.title}>My Projects</h2>
+            <h2 style={styles.title}>
+              My <strong style={{ color: "black" }}>Projects</strong>
+            </h2>
             <section style={styles.section}>
               <div style={styles.projectDiv}>
                 <Stepper
@@ -98,8 +88,33 @@ class Projects extends React.Component {
                 />
                 <div style={styles.description}>
                   <h1>{projects[this.state.currentProject].title}</h1>
-                  <h3>{projects[this.state.currentProject].shortDesc}</h3>
-                  <p>{projects[this.state.currentProject].fullDesc}</p>
+                  <IconButton aria-label="website">
+                    <FontAwesomeIcon icon={faLink} />
+                  </IconButton>
+                  <IconButton aria-label="git-repo">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </IconButton>
+                  <IconButton aria-label="youtube">
+                    <FontAwesomeIcon icon={faYoutubeSquare} />
+                  </IconButton>
+                  {/* <h3>{projects[this.state.currentProject].shortDesc}</h3> */}
+                  <div
+                    style={{
+                      width: "20em",
+                      height: "30%",
+                      overflow: "auto"
+                    }}
+                  >
+                    <p
+                      style={{
+                        ":hover": { visibility: "visible" },
+                        ":focus": { visibility: "visible" },
+                        color: "#777777"
+                      }}
+                    >
+                      {projects[this.state.currentProject].fullDesc}
+                    </p>
+                  </div>
                 </div>
                 <div style={styles.box} />
               </div>
@@ -113,18 +128,16 @@ class Projects extends React.Component {
 
 const styles = {
   section: {
-    display: "block",
-    // verticalAlign: "baseline",
-    color: "#232323"
-    // height: "100vh"
+    display: "block"
   },
   div: {
     position: "absolute",
-    padding: "0 32px"
-    // maxWidth: "1184px",
-    // margin: "0 auto"
+    padding: "0 32px",
+    maxHeight: "100%"
   },
   title: {
+    color: "#777777",
+    letterSpacing: "0.3em",
     left: "10%",
     textTransform: "uppercase",
     fontSize: "64px",
@@ -134,9 +147,6 @@ const styles = {
   },
   projectDiv: {
     display: "flex"
-    // flexDirection: "row",
-    // alignItems: "flex-start",
-    // justifyContent: "flex-start"
   },
   projectPic: {
     width: "50%",
@@ -147,22 +157,23 @@ const styles = {
     borderRadius: "1%"
   },
   description: {
-    overflow: "scroll",
     flex: "1",
     width: "431px",
     zIndex: "2",
     padding: "0% 0% 0% 5%"
   },
   box: {
-    height: "100%",
+    height: "90%",
     transform: "translate(-220px,-80px)",
     position: "absolute",
     alignSelf: "end",
-    top: "10%",
-    right: "-250px",
+    top: "15%",
+    right: "-27%",
     width: "70%",
     zIndex: "1",
     display: "block",
+    // backgroundColor: "rgba(19, 51, 0, .3)",
+    // backgroundColor: "#ededed",
     backgroundColor: "#f1e0d3",
     borderRadius: "1%"
   }

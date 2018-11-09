@@ -4,27 +4,30 @@ import fullArtemis from "../images/fulls/artemis.jpg";
 class WhatIDo extends React.Component {
   render() {
     return (
-      <section style={styles.section}>
-        <div style={styles.div}>
-          <h2 style={styles.title}>My Background</h2>
-          <section style={styles.section}>
-            <div style={styles.projectDiv}>
-              <div style={styles.description}>
-                <h1>TITLE</h1>
-                <h3>little descriptiom</h3>
+      <div style={{ height: "100vh" }}>
+        <section style={styles.section}>
+          <div style={styles.div}>
+            <h2 style={styles.title}>My Background</h2>
+            <section style={styles.section}>
+              <div style={styles.projectDiv}>
+                <div style={styles.description}>
+                  <h1>TITLE</h1>
+                  <h3>little descriptiom</h3>
+                </div>
+                <img src={fullArtemis} style={styles.projectPic} />
+                <div style={styles.box} />
               </div>
-              <img src={fullArtemis} style={styles.projectPic} />
-              <div style={styles.box} />
-            </div>
-          </section>
-        </div>
-      </section>
+            </section>
+          </div>
+        </section>
+      </div>
     );
   }
 }
 
 const styles = {
   section: {
+    // position: "absolute",
     display: "block",
     // verticalAlign: "baseline",
     color: "#232323"

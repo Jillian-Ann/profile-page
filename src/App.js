@@ -12,7 +12,7 @@ import MyProjects from "./components/MyProjects";
 import "./App.css";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import background from "./images/background.jpg";
+import background from "./images/backgroundbw.jpg";
 import { Parallax } from "react-parallax";
 
 const theme = createMuiTheme({
@@ -76,16 +76,13 @@ class App extends Component {
     const siteDescription = "Profile Page";
 
     return (
-      <div
-        style={{
-          backgroundImage: background,
-          overflow: "visible"
-        }}
-      >
+      // <Parallax style={{ height: "300%" }} bgImage={background} strength={500}>
+      <div>
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
         </Helmet>
+        <Navbar />
         <Intro />
         <MyProjects />
         <WhatIDo />
@@ -94,6 +91,7 @@ class App extends Component {
         <Gallery />
         <WhatIDo /> */}
       </div>
+      /* </Parallax> */
     );
   }
 }

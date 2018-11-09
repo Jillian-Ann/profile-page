@@ -9,40 +9,13 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+import { Pause } from "@material-ui/icons";
 
 import artemis from "../images/fulls/artemis.jpg";
 import nutrivision from "../images/fulls/nutrivision.jpg";
 import bookhaven from "../images/fulls/bookhaven.jpg";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const tutorialSteps = [
-  {
-    label: "Artemis",
-    imgPath: artemis,
-    id: "1",
-    shortDesc: "Pandora for podcasts - podcast reccomendation app.",
-    fullDesc:
-      "Artemis is a podcast recommendation and streaming single page application. A user can search for a genre to create channels in which they can rate played episodes. The channel learns what the user likes and curates future content based off the user's feedback. Artemis was built with JavaScript and the NERD stack - Node, Express, React-Redux, Postgres/Sequelize. The k-nearest neighbors algorithm was implemented to power a collaborative recommendation filtering system and the TF-IDF(Term Frequency-Inverse Document Frequency) algorithm and the Natural library were used to extract relevant tag names to feed to the recommendation engine. When a user likes or dislikes an episode, the tag scores associated with the channel are increased or decreased. Users are then played episodes from channels with similar tag scores to theirs. To ensure a consistent user experience, we created a clean and simple user interface with Material-UI.",
-    title: "Artemis"
-  },
-  {
-    label: "Nutri-Vision",
-    imgPath: nutrivision,
-    id: "5",
-    shortDesc: "Photo 5",
-    fullDesc: "Photo 5",
-    title: "Photo 5"
-  },
-  {
-    label: "Book Haven",
-    imgPath: bookhaven,
-    id: "5",
-    shortDesc: "Photo 5",
-    fullDesc: "Photo 5",
-    title: "Photo 5"
-  }
-];
 
 const styles = theme => ({
   header: {
@@ -64,7 +37,9 @@ const styles = theme => ({
 
 class SwipeableTextMobileStepper extends React.Component {
   state = {
-    activeStep: 0
+    activeStep: 0,
+    paused: false,
+    hovered: false
   };
 
   handleNext = () => {
@@ -82,21 +57,40 @@ class SwipeableTextMobileStepper extends React.Component {
   };
 
   handleStepChange = activeStep => {
-    this.setState({ activeStep });
-    this.props.changeProject(this.state.activeStep);
+    if (!this.state.paused) {
+      this.setState({ activeStep });
+      this.props.changeProject(this.state.activeStep);
+    }
+  };
+
+  handleClick = () => {
+    if (this.state.paused) {
+      this.setState({
+        paused: false
+      });
+    } else {
+      this.setState({
+        paused: true
+      });
+    }
+  };
+
+  handleEnter = () => {
+    this.setState({
+      hovered: true
+    });
+  };
+
+  handleLeave = () => {
+    this.setState({
+      hovered: false
+    });
   };
 
   render() {
-    const {
-      classes,
-      theme,
-      projects,
-      nextProject,
-      previousProject,
-      changProject
-    } = this.props;
+    const { classes, theme, projects } = this.props;
     const { activeStep } = this.state;
-    const maxSteps = tutorialSteps.length;
+    const maxSteps = projects.length;
 
     return (
       <div
@@ -135,11 +129,26 @@ class SwipeableTextMobileStepper extends React.Component {
                   className={classes.img}
                   src={step.imgPath}
                   alt={step.label}
+                  onClick={this.handleClick}
+                  onMouseLeave={this.handleLeave}
+                  onMouseEnter={this.handleEnter}
                 />
               ) : null}
             </div>
           ))}
         </AutoPlaySwipeableViews>
+        {this.state.hovered ? (
+          <Pause
+            style={{
+              right: "50%",
+              top: "50%",
+              position: "absolute",
+              zIndex: 4
+            }}
+          />
+        ) : (
+          <div />
+        )}
         <Button
           size="small"
           onClick={this.handleNext}
