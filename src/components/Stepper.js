@@ -18,16 +18,17 @@ import bookhaven from "../images/fulls/bookhaven.jpg";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const styles = theme => ({
-  header: {
-    display: "flex",
-    alignItems: "center",
-    height: 50,
-    paddingLeft: theme.spacing.unit * 4,
-    backgroundColor: theme.palette.background.default
-  },
+  // header: {
+  //   display: "flex",
+  //   alignItems: "center",
+  //   height: 50,
+  //   paddingLeft: theme.spacing.unit * 4,
+  //   backgroundColor: theme.palette.background.default
+  // },
   img: {
     width: "100%",
     flex: "1",
+    // alignSelf: "flex-end",
     // marginLeft: "48px",
     position: "relative",
     zIndex: "2",
@@ -101,7 +102,8 @@ class SwipeableTextMobileStepper extends React.Component {
           marginLeft: "48px",
           position: "relative",
           zIndex: "2",
-          borderRadius: "1%"
+          borderRadius: "1%",
+          alignSelf: "center"
         }}
       >
         <Button

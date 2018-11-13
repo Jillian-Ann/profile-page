@@ -7,7 +7,6 @@ import Intro from "./components/Intro";
 import WhatIDo from "./components/What-I-Do";
 import Gallery from "./components/Projects";
 import PrimaryProject from "./components/PrimaryProject";
-import SecondaryProject from "./components/SecondaryProjects";
 import MyProjects from "./components/MyProjects";
 import "./App.css";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -77,7 +76,7 @@ class App extends Component {
 
     return (
       // <Parallax style={{ height: "300%" }} bgImage={background} strength={500}>
-      <div>
+      <div style={{ width: "100vw" }}>
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />

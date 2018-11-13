@@ -1,10 +1,16 @@
 import React from "react";
 import fullArtemis from "../images/fulls/artemis.jpg";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 class WhatIDo extends React.Component {
   render() {
+    AOS.init({
+      duration: 1500
+    });
     return (
-      <div style={{ height: "100vh" }}>
+      <div data-aos="slide-right" style={{ height: "100vh" }}>
         <section style={styles.section}>
           <div style={styles.div}>
             <h2 style={styles.title}>My Background</h2>
@@ -12,7 +18,7 @@ class WhatIDo extends React.Component {
               <div style={styles.projectDiv}>
                 <div style={styles.description}>
                   <h1>TITLE</h1>
-                  <h3>little descriptiom</h3>
+                  <h3>little description</h3>
                 </div>
                 <img src={fullArtemis} style={styles.projectPic} />
                 <div style={styles.box} />

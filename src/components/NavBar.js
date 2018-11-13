@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo.png";
+import icon from "../images/icon.svg";
 
 class Navbar extends React.Component {
   render() {
@@ -11,28 +11,41 @@ class Navbar extends React.Component {
           position: "fixed",
           padding: "10px",
           width: "100vw",
-          color: "#fff",
-          backgroundColor: "rgba(37, 37, 37, .95)",
+          color: "black",
+          backgroundColor: "white",
           zIndex: "4",
-          borderBottom: "1px solid black"
+          borderBottom: "1px solid #f0f0f0"
         }}
       >
         <ul
           style={{
+            height: "20px",
+            left: "15%",
             width: "90%",
             listStyleType: "none",
             display: "flex",
             flexDirection: "row"
           }}
         >
-          <li style={{ margin: "0 2em" }}>Intro</li>
-          <li style={{ margin: "0 2em" }}>Projects</li>
-          <li style={{ margin: "0 2em" }}>Who I Am</li>
-          <li style={{ margin: "0 2em" }}>Say Hello</li>
+          <img
+            style={{ alignSelf: "center", height: "250%", margin: "0 2em" }}
+            src={icon}
+          />
+          <li style={styles.li}>Intro</li>
+          <li style={styles.li}>Projects</li>
+          <li style={styles.li}>Who I Am</li>
+          <li style={styles.li}>Say Hello</li>
         </ul>
       </header>
     );
   }
 }
+
+const styles = {
+  li: {
+    margin: "0 2em",
+    fontWeight: "bold"
+  }
+};
 
 export default Navbar;

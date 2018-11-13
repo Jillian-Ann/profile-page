@@ -14,6 +14,9 @@ import artemis from "../images/fulls/artemis.jpg";
 import nutrivision from "../images/fulls/nutrivision.jpg";
 import bookhaven from "../images/fulls/bookhaven.jpg";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const projects = [
   {
     label: "Artemis",
@@ -71,8 +74,18 @@ class Projects extends React.Component {
   };
 
   render() {
+    AOS.init({
+      duration: 1000
+    });
     return (
-      <div style={{ height: "100vh" }}>
+      <div
+        data-aos="fade-left"
+        style={{
+          // display: "block",
+          // position: "relative",
+          height: "100vh"
+        }}
+      >
         <section style={styles.section}>
           <div style={styles.div}>
             <h2 style={styles.title}>
@@ -140,7 +153,7 @@ const styles = {
     letterSpacing: "0.3em",
     left: "10%",
     textTransform: "uppercase",
-    fontSize: "64px",
+    fontSize: "6vw",
     lineHeight: "1em",
     position: "relative",
     zIndex: "3"
@@ -158,7 +171,7 @@ const styles = {
   },
   description: {
     flex: "1",
-    width: "431px",
+    width: "50%",
     zIndex: "2",
     padding: "0% 0% 0% 5%"
   },
