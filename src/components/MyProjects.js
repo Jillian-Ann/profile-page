@@ -40,8 +40,10 @@ const projects = [
     label: "Book Haven",
     imgPath: bookhaven,
     id: "5",
-    shortDesc: "E-commerce platform for books",
-    fullDesc: "Photo 5",
+    shortDesc:
+      "E-commerce platform for books. Users can search by title, author or genre to find their next read. Local storage and stripe are used to hold a cart and provide secure checkout. Admin functionality for editing and adding inventory and viewing all orders and order statuses.",
+    fullDesc:
+      "E-commerce platform for books. Users can search by title, author or genre to find their next read. They can create accounts, with the option of using Google Oauth, and view their orders and their statuses. Local storage and stripe are used to hold a cart and provide secure checkout. Admin functionality for editing and adding inventory and viewing all orders and order statuses. lalalalla aaaaaaaa",
     title: "Book Haven"
   }
 ];
@@ -81,59 +83,58 @@ class Projects extends React.Component {
       <div
         data-aos="fade-left"
         style={{
-          // display: "block",
-          // position: "relative",
-          height: "100vh"
+          zIndex: 0,
+          height: "100%",
+          minHeight: "100vh"
         }}
       >
-        <section style={styles.section}>
-          <div style={styles.div}>
-            <h2 style={styles.title}>
-              My <strong style={{ color: "black" }}>Projects</strong>
-            </h2>
-            <section style={styles.section}>
-              <div style={styles.projectDiv}>
-                <Stepper
-                  changeProject={this.changeProject}
-                  previousProject={this.previousProject}
-                  nextProject={this.nextProject}
-                  projects={projects}
-                />
-                <div style={styles.description}>
-                  <h1>{projects[this.state.currentProject].title}</h1>
-                  <IconButton aria-label="website">
-                    <FontAwesomeIcon icon={faLink} />
-                  </IconButton>
-                  <IconButton aria-label="git-repo">
-                    <FontAwesomeIcon icon={faGithub} />
-                  </IconButton>
-                  <IconButton aria-label="youtube">
-                    <FontAwesomeIcon icon={faYoutubeSquare} />
-                  </IconButton>
-                  {/* <h3>{projects[this.state.currentProject].shortDesc}</h3> */}
-                  <div
+        {/* <section style={styles.section}> */}
+        <div style={styles.div}>
+          <h2 style={styles.title}>
+            My <strong style={{ color: "black" }}>Projects</strong>
+          </h2>
+          <section style={styles.section}>
+            <div style={styles.projectDiv}>
+              <Stepper
+                changeProject={this.changeProject}
+                previousProject={this.previousProject}
+                nextProject={this.nextProject}
+                projects={projects}
+              />
+              <div style={styles.description}>
+                <h1>{projects[this.state.currentProject].title}</h1>
+                <IconButton aria-label="website">
+                  <FontAwesomeIcon icon={faLink} />
+                </IconButton>
+                <IconButton aria-label="git-repo">
+                  <FontAwesomeIcon icon={faGithub} />
+                </IconButton>
+                <IconButton aria-label="youtube">
+                  <FontAwesomeIcon icon={faYoutubeSquare} />
+                </IconButton>
+                <div
+                  style={{
+                    width: "20em",
+                    height: "30%",
+                    overflow: "auto"
+                  }}
+                >
+                  <p
                     style={{
-                      width: "20em",
-                      height: "30%",
-                      overflow: "auto"
+                      ":hover": { visibility: "visible" },
+                      ":focus": { visibility: "visible" },
+                      color: "#777777"
                     }}
                   >
-                    <p
-                      style={{
-                        ":hover": { visibility: "visible" },
-                        ":focus": { visibility: "visible" },
-                        color: "#777777"
-                      }}
-                    >
-                      {projects[this.state.currentProject].fullDesc}
-                    </p>
-                  </div>
+                    {projects[this.state.currentProject].fullDesc}
+                  </p>
                 </div>
-                <div style={styles.box} />
               </div>
-            </section>
-          </div>
-        </section>
+              <div style={styles.box} />
+            </div>
+          </section>
+        </div>
+        {/* </section> */}
       </div>
     );
   }
@@ -144,13 +145,15 @@ const styles = {
     display: "block"
   },
   div: {
-    position: "absolute",
-    padding: "0 32px",
-    maxHeight: "100%"
+    position: "relative",
+    padding: "0 32px"
+    // height: "80vh"
+    // maxHeight: "50%"
   },
   title: {
     color: "#777777",
     letterSpacing: "0.3em",
+    top: "30px",
     left: "10%",
     textTransform: "uppercase",
     fontSize: "6vw",
@@ -160,6 +163,7 @@ const styles = {
   },
   projectDiv: {
     display: "flex"
+    // padding: "19px 0"
   },
   projectPic: {
     width: "50%",
@@ -170,18 +174,19 @@ const styles = {
     borderRadius: "1%"
   },
   description: {
-    flex: "1",
+    // fontSize: "1vw",
+    flex: "1.5",
     width: "50%",
     zIndex: "2",
     padding: "0% 0% 0% 5%"
   },
   box: {
     height: "90%",
-    transform: "translate(-220px,-80px)",
+    // transform: "translate(-220px,-80px)",
     position: "absolute",
-    alignSelf: "end",
-    top: "15%",
-    right: "-27%",
+    // alignSelf: "end",
+    top: "-1vh",
+    right: "0",
     width: "70%",
     zIndex: "1",
     display: "block",

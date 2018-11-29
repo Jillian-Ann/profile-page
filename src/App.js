@@ -14,6 +14,10 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import background from "./images/backgroundbw.jpg";
 import { Parallax } from "react-parallax";
 
+import ScrollableAnchor from "react-scrollable-anchor";
+import { configureAnchors, goToTop, goToAnchor } from "react-scrollable-anchor";
+configureAnchors({ offset: -150, scrollDuration: 200 });
+
 const theme = createMuiTheme({
   palette: {
     type: "dark",
@@ -76,15 +80,21 @@ class App extends Component {
 
     return (
       // <Parallax style={{ height: "300%" }} bgImage={background} strength={500}>
-      <div style={{ width: "100vw" }}>
+      <div style={{ width: "100%", overflowX: "hidden" }}>
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
         </Helmet>
         <Navbar />
-        <Intro />
-        <MyProjects />
-        <WhatIDo />
+        <ScrollableAnchor id={"intro"}>
+          <Intro />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"projects"}>
+          <MyProjects />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"about"}>
+          <WhatIDo />
+        </ScrollableAnchor>
         {/* <PrimaryProject />
         <SecondaryProject />
         <Gallery />

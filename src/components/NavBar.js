@@ -1,10 +1,16 @@
 import React from "react";
 import icon from "../images/icon.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 class Navbar extends React.Component {
   render() {
+    AOS.init({
+      duration: 2000
+    });
     return (
       <header
+        data-aos="fade-in"
         style={{
           top: "0",
           display: "flex",
@@ -31,9 +37,15 @@ class Navbar extends React.Component {
             style={{ alignSelf: "center", height: "250%", margin: "0 2em" }}
             src={icon}
           />
-          <li style={styles.li}>Intro</li>
-          <li style={styles.li}>Projects</li>
-          <li style={styles.li}>Who I Am</li>
+          <li style={styles.li}>
+            <a href="#intro">Intro</a>
+          </li>
+          <li style={styles.li}>
+            <a href="#projects">Projects</a>
+          </li>
+          <li style={styles.li}>
+            <a href="#about">Who I Am</a>
+          </li>
           <li style={styles.li}>Say Hello</li>
         </ul>
       </header>

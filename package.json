@@ -19,6 +19,7 @@
     "react-images": "^0.5.19",
     "react-parallax": "^2.0.1",
     "react-scripts": "2.0.5",
+    "react-scrollable-anchor": "^0.6.1",
     "react-swipeable-views": "^0.13.0"
   },
   "scripts": {
