@@ -134,6 +134,10 @@ class WhatIDo extends React.Component {
 }
 
 const styles = {
+  "@media screen and (max-width: 600px)": {
+    position: "relative",
+    padding: "0 32px 0 32px"
+  },
   section: {
     display: "block"
   },
@@ -154,12 +158,10 @@ const styles = {
   },
   projectDiv: {
     display: "flex"
-    // padding: "19px 0"
   },
   projectPic: {
     width: "50%",
     flex: "1",
-    // marginLeft: "48px",
     position: "relative",
     zIndex: "2",
     borderRadius: "1%"

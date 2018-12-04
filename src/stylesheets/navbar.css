@@ -1,0 +1,47 @@
+header {
+  top: 0;
+  display: flex;
+  position: fixed;
+  padding: 10px;
+  width: 100vw;
+  color: black;
+  background-color: white;
+  z-index: 4;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+ul {
+  height: 20px;
+  left: 15%;
+  width: 90%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  align-self: center;
+  height: 250%;
+  margin: 0 2em;
+}
+
+li {
+  margin: 0 2em;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .icon {
+    display: none;
+  }
+  header {
+    padding: 1px;
+  }
+  ul {
+    left: 0%;
+    padding-left: 0;
+  }
+  li {
+    margin: 0 1em;
+  }
+}

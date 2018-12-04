@@ -8,7 +8,7 @@ import WhatIDo from "./components/What-I-Do";
 import Gallery from "./components/Projects";
 import PrimaryProject from "./components/PrimaryProject";
 import MyProjects from "./components/MyProjects";
-import "./App.css";
+import "./stylesheets/App.css";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import background from "./images/backgroundbw.jpg";

@@ -1,8 +1,5 @@
 import React from "react";
-import fullArtemis from "../images/fulls/artemis.jpg";
 import Stepper from "./Stepper";
-import ActionGTranslate from "material-ui/SvgIcon";
-import { Parallax } from "react-parallax";
 
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +13,8 @@ import bookhaven from "../images/fulls/bookhaven.jpg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import "../../src/stylesheets/myProjects.css";
 
 const projects = [
   {
@@ -88,20 +87,19 @@ class Projects extends React.Component {
           minHeight: "100vh"
         }}
       >
-        {/* <section style={styles.section}> */}
-        <div style={styles.div}>
-          <h2 style={styles.title}>
+        <div className="div">
+          <h2 className="title">
             My <strong style={{ color: "black" }}>Projects</strong>
           </h2>
-          <section style={styles.section}>
-            <div style={styles.projectDiv}>
+          <section className="section">
+            <div className="projectDiv">
               <Stepper
                 changeProject={this.changeProject}
                 previousProject={this.previousProject}
                 nextProject={this.nextProject}
                 projects={projects}
               />
-              <div style={styles.description}>
+              <div className="description">
                 <h1>{projects[this.state.currentProject].title}</h1>
                 <IconButton aria-label="website">
                   <FontAwesomeIcon icon={faLink} />
@@ -130,70 +128,13 @@ class Projects extends React.Component {
                   </p>
                 </div>
               </div>
-              <div style={styles.box} />
+              <div className="box" />
             </div>
           </section>
         </div>
-        {/* </section> */}
       </div>
     );
   }
 }
 
-const styles = {
-  section: {
-    display: "block"
-  },
-  div: {
-    position: "relative",
-    padding: "0 32px"
-    // height: "80vh"
-    // maxHeight: "50%"
-  },
-  title: {
-    color: "#777777",
-    letterSpacing: "0.3em",
-    top: "30px",
-    left: "10%",
-    textTransform: "uppercase",
-    fontSize: "6vw",
-    lineHeight: "1em",
-    position: "relative",
-    zIndex: "3"
-  },
-  projectDiv: {
-    display: "flex"
-    // padding: "19px 0"
-  },
-  projectPic: {
-    width: "50%",
-    flex: "1",
-    marginLeft: "48px",
-    position: "relative",
-    zIndex: "2",
-    borderRadius: "1%"
-  },
-  description: {
-    // fontSize: "1vw",
-    flex: "1.5",
-    width: "50%",
-    zIndex: "2",
-    padding: "0% 0% 0% 5%"
-  },
-  box: {
-    height: "90%",
-    // transform: "translate(-220px,-80px)",
-    position: "absolute",
-    // alignSelf: "end",
-    top: "-1vh",
-    right: "0",
-    width: "70%",
-    zIndex: "1",
-    display: "block",
-    // backgroundColor: "rgba(19, 51, 0, .3)",
-    // backgroundColor: "#ededed",
-    backgroundColor: "#f1e0d3",
-    borderRadius: "1%"
-  }
-};
 export default Projects;

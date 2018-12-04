@@ -11,6 +11,7 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Pause } from "@material-ui/icons";
 
+import "../stylesheets/stepper.css";
 import artemis from "../images/fulls/artemis.jpg";
 import nutrivision from "../images/fulls/nutrivision.jpg";
 import bookhaven from "../images/fulls/bookhaven.jpg";
@@ -94,18 +95,7 @@ class SwipeableTextMobileStepper extends React.Component {
     const maxSteps = projects.length;
 
     return (
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          flex: "2",
-          marginLeft: "48px",
-          position: "relative",
-          zIndex: "2",
-          borderRadius: "1%",
-          alignSelf: "center"
-        }}
-      >
+      <div className="main">
         <Button
           Button
           size="small"
