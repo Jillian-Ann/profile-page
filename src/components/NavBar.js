@@ -22,7 +22,10 @@ class Navbar extends React.Component {
           <li>
             <a href="#about">About</a>
           </li>
-          <li>Contact</li>
+          <li>
+            {" "}
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </header>
     );

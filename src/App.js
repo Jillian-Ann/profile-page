@@ -1,34 +1,17 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 
-import Header from "./components/Header";
 import Navbar from "./components/NavBar";
 import Intro from "./components/Intro";
 import WhatIDo from "./components/What-I-Do";
-import Gallery from "./components/Projects";
-import PrimaryProject from "./components/PrimaryProject";
 import MyProjects from "./components/MyProjects";
-import "./stylesheets/App.css";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import ContactForm from "./components/ContactForm";
 
-import background from "./images/backgroundbw.jpg";
-import { Parallax } from "react-parallax";
+import "./stylesheets/App.css";
 
 import ScrollableAnchor from "react-scrollable-anchor";
 import { configureAnchors, goToTop, goToAnchor } from "react-scrollable-anchor";
 configureAnchors({ offset: -150, scrollDuration: 200 });
-
-const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    primary: {
-      main: "#86c7bf"
-    },
-    secondary: {
-      main: "#FFF6F4"
-    }
-  }
-});
 
 class App extends Component {
   constructor() {
@@ -79,7 +62,6 @@ class App extends Component {
     const siteDescription = "Profile Page";
 
     return (
-      // <Parallax style={{ height: "300%" }} bgImage={background} strength={500}>
       <div style={{ width: "100%", overflowX: "hidden" }}>
         <Helmet>
           <title>{siteTitle}</title>
@@ -95,12 +77,10 @@ class App extends Component {
         <ScrollableAnchor id={"about"}>
           <WhatIDo />
         </ScrollableAnchor>
-        {/* <PrimaryProject />
-        <SecondaryProject />
-        <Gallery />
-        <WhatIDo /> */}
+        <ScrollableAnchor id={"contact"}>
+          <ContactForm />
+        </ScrollableAnchor>
       </div>
-      /* </Parallax> */
     );
   }
 }

@@ -7,35 +7,35 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
-import artemis from "../images/fulls/artemis.jpg";
-import nutrivision from "../images/fulls/nutrivision.jpg";
-import bookhaven from "../images/fulls/bookhaven.jpg";
+import fullstack from "../images/fullstack.jpg";
+import salesanalyst from "../images/salesanalyst.jpg";
+import ucsb from "../images/ucsb.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const projects = [
   {
-    label: "Artemis",
-    imgPath: artemis,
+    label: "Grace-Hopper",
+    imgPath: fullstack,
     id: "1",
-    shortDesc: "Pandora for podcasts",
+    shortDesc: "Grace Hopper",
     fullDesc:
-      "A podcast recommendation and streaming single page application. Users search for genres to create channels. Episodes falling under the channel's genre are rendered and users can either like or dilike played episodes. From this feedback, the app curates future content from a collaborative recommendation engine our team built, delivering content that caters to user's interests.",
-    title: "Artemis"
+      "I attended Grace Hopper, immersive software engineering program for women, at the Fullstack Academy of Code. I completed the program in October and I am now a teaching fellow for the current cohort. Grace Hopper focused on JavaScript, Node, Sequelize/PostgreSQL, Express, React, Redux, data structures and algorithms, system architecture, and test-driven development. As a fellow, I now mentor and hold reviews for students on these concepts, lead group projects as project manager and code reviewer, and aminister technical interviews for prospective students.",
+    title: "Teaching Fellow @ Fullstack Academy"
   },
   {
-    label: "Nutri-Vision",
-    imgPath: nutrivision,
+    label: "Sales Analyst",
+    imgPath: salesanalyst,
     id: "5",
-    shortDesc: "Menu nutrtion analyzer",
+    shortDesc: "Sales Data Analyst",
     fullDesc:
       "iOS and Android app using JavaScript and React Native. Using Expo's Camera, the app takes an image and sends it to be analyzed by Google's Vision API. Google's OCR then reads the image and the returned text is filtered for menu items. The dishes are then sent to Spoonacular's API to retrieve nutrition information. An ordered list of dishes with their nutrition is ultimately displayed to the user.",
-    title: "Nutrition Vision"
+    title: "Sales Data Analyst"
   },
   {
-    label: "Book Haven",
-    imgPath: bookhaven,
+    label: "UCSB",
+    imgPath: ucsb,
     id: "5",
     shortDesc:
       "E-commerce platform for books. Users can search by title, author or genre to find their next read. Local storage and stripe are used to hold a cart and provide secure checkout. Admin functionality for editing and adding inventory and viewing all orders and order statuses.",
@@ -74,11 +74,11 @@ class WhatIDo extends React.Component {
 
   render() {
     AOS.init({
-      duration: 1500
+      duration: 1000
     });
     return (
       <div
-        data-aos="slide-right"
+        data-aos="fade-right"
         style={{
           zIndex: 0,
           height: "100%",
@@ -86,7 +86,9 @@ class WhatIDo extends React.Component {
         }}
       >
         <div style={styles.div}>
-          <h2 style={styles.title}>My Background</h2>
+          <h2 style={styles.title}>
+            My <strong style={{ color: "black" }}>Background</strong>
+          </h2>
           <section style={styles.section}>
             <div style={styles.projectDiv}>
               <div style={styles.description}>
@@ -160,6 +162,7 @@ const styles = {
     display: "flex"
   },
   projectPic: {
+    backgroundColor: "white",
     width: "50%",
     flex: "1",
     position: "relative",

@@ -1,4 +1,5 @@
 .mainIntro {
+  text-align: center;
   display: block;
   padding: 50px 10% 50px 10%;
   z-index: 0;
@@ -8,11 +9,50 @@
 }
 
 .introTitle {
+  text-align: center;
   position: relative;
   font-size: 30px;
   z-index: 3;
-  display: flex;
+  display: block;
   align-items: flex-end;
+  margin: 90px;
+}
+
+.introTitle h1 {
+  margin: 0;
+}
+
+.typewriter {
+  /* font: bold 300% Consolas, Monaco, monospace;
+  border-right: 0.1em solid black;
+  width: 16.5em;
+  width: 21ch;
+  margin: 2em 1em; */
+  /* white-space: nowrap; */
+  overflow: hidden;
+  -webkit-animation: typing 2s steps(21, end),
+    blink-caret 0.5s step-end infinite alternate;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
 
 @media only screen and (max-width: 600px) {

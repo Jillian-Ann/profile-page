@@ -11,21 +11,25 @@ class Intro extends React.Component {
     return (
       <div data-aos="fade-down" className="mainIntro">
         <div className="introTitle">
-          <h1 style={{ flex: "1" }}>
+          <h1>
             <strong style={{ color: "#777777" }}>Hi, I'm </strong>
-            Jillian.
+            {/* Jillian. */}
           </h1>
-          <div style={{ flex: "2", padding: "5%", fontSize: "20px" }} />
+          <h1>Jillian</h1>
+          {/* <div style={{ flex: "2", padding: "5%", fontSize: "20px" }} /> */}
         </div>
-        <h1>
-          Environmentalist <strong style={{ color: "#777777" }}>turned</strong>{" "}
-          software engineer{" "}
-          <strong style={{ color: "#777777" }}>
-            creating intuitive and dynamic{" "}
-          </strong>
-          UIs
-          <strong style={{ color: "#777777" }}> inspired by </strong> nature.
-        </h1>
+        <div className="typewriter">
+          <h1>
+            Environmentalist{" "}
+            <strong style={{ color: "#777777" }}>turned</strong> software
+            engineer{" "}
+            <strong style={{ color: "#777777" }}>
+              creating intuitive and dynamic{" "}
+            </strong>
+            UIs
+            <strong style={{ color: "#777777" }}> inspired by </strong> nature.
+          </h1>
+        </div>
       </div>
     );
   }
