@@ -30,7 +30,19 @@ li {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 600px) {
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  border-bottom: solid 2px grey;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out 250ms;
+}
+
+@media only screen and (max-width: 850px) {
   .icon {
     display: none;
   }

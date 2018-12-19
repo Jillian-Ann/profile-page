@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
 import "../stylesheets/contactForm.css";
 
 import AOS from "aos";
@@ -44,6 +41,8 @@ class Contact extends React.Component {
     });
   };
 
+  handlClick = evt => {};
+
   render() {
     // const { classes } = this.props;
     AOS.init({
@@ -52,7 +51,7 @@ class Contact extends React.Component {
     return (
       <div data-aos="fade-down" className="inner contact">
         <div className="greeting">
-          <h2> SAY HELLO</h2>
+          <h2>SAY HELLO</h2>
           <h3>
             Whether you have a work enquiry or simply want to find out more,
             let's talk.
@@ -108,6 +107,7 @@ class Contact extends React.Component {
                 id="submit"
                 name="submit"
                 className="form-btn semibold"
+                // onClick=""
               >
                 Send Message
               </button>

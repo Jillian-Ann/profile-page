@@ -39,7 +39,7 @@
 /* Input Styles */
 
 .form {
-  width: 100%;
+  width: 96%;
   padding: 15px;
   background: #f8f8f8;
   border: 1px solid rgba(0, 0, 0, 0.075);
@@ -130,7 +130,6 @@ input {
 }
 
 .greeting {
-  width: 100vw;
   margin: -10% -10% 0 -10%;
 }
 

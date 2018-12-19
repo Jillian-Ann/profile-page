@@ -9,14 +9,35 @@ class Intro extends React.Component {
       duration: 2000
     });
     return (
-      <div data-aos="fade-down" className="mainIntro">
+      <div data-aos="fade-in" className="mainIntro">
         <div className="introTitle">
-          <h1>
+          <div className="introWrapper">
+            <div className="container">
+              <div className="name">
+                <span>J</span>
+                <span>i</span>
+                <span>l</span>
+                <span>l</span>
+                <span>&nbsp;</span>
+                <span />
+                <span>M</span>
+                <span>c</span>
+                <span>L</span>
+                <span>a</span>
+                <span>r</span>
+                <span>e</span>
+                <span>n</span>
+              </div>
+              <div className="line" />
+              <div className="sub">
+                <p>Software Engineer</p>
+              </div>
+            </div>
+          </div>
+          {/* <h1>
             <strong style={{ color: "#777777" }}>Hi, I'm </strong>
-            {/* Jillian. */}
           </h1>
           <h1>Jillian</h1>
-          {/* <div style={{ flex: "2", padding: "5%", fontSize: "20px" }} /> */}
         </div>
         <div className="typewriter">
           <h1>
@@ -28,7 +49,7 @@ class Intro extends React.Component {
             </strong>
             UIs
             <strong style={{ color: "#777777" }}> inspired by </strong> nature.
-          </h1>
+          </h1> */}
         </div>
       </div>
     );

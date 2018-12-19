@@ -21,8 +21,8 @@ const projects = [
     id: "1",
     shortDesc: "Grace Hopper",
     fullDesc:
-      "I attended Grace Hopper, immersive software engineering program for women, at the Fullstack Academy of Code. I completed the program in October and I am now a teaching fellow for the current cohort. Grace Hopper focused on JavaScript, Node, Sequelize/PostgreSQL, Express, React, Redux, data structures and algorithms, system architecture, and test-driven development. As a fellow, I now mentor and hold reviews for students on these concepts, lead group projects as project manager and code reviewer, and aminister technical interviews for prospective students.",
-    title: "Teaching Fellow @ Fullstack Academy"
+      "I am a teaching fellow at Fullstack Academy, an immersive software engineering bootcamp. The program focuses on JavaScript, Node, Sequelize/PostgreSQL, Express, React, Redux, data structures and algorithms, system architecture, and test-driven development. As a fellow, I mentor and hold reviews for students on these concepts, lead group projects, and conduct technical interviews for prospective students.",
+    title: "Software Engineering Fellow"
   },
   {
     label: "Sales Analyst",
@@ -30,7 +30,7 @@ const projects = [
     id: "5",
     shortDesc: "Sales Data Analyst",
     fullDesc:
-      "iOS and Android app using JavaScript and React Native. Using Expo's Camera, the app takes an image and sends it to be analyzed by Google's Vision API. Google's OCR then reads the image and the returned text is filtered for menu items. The dishes are then sent to Spoonacular's API to retrieve nutrition information. An ordered list of dishes with their nutrition is ultimately displayed to the user.",
+      "As a Sales Analyst at Sheehan Family Companies, a beverage distributor, I gathered and manipulate marketing and sales data for valuable insights. Throughout my time there, I mastered many new softwares, including their CRM Karma software, SAP Concur, and other sales reporting tools on VIP. I became advanced in excel and used VBA to program macros and improve the efficiency of running reports.",
     title: "Sales Data Analyst"
   },
   {
@@ -40,8 +40,8 @@ const projects = [
     shortDesc:
       "E-commerce platform for books. Users can search by title, author or genre to find their next read. Local storage and stripe are used to hold a cart and provide secure checkout. Admin functionality for editing and adding inventory and viewing all orders and order statuses.",
     fullDesc:
-      "E-commerce platform for books. Users can search by title, author or genre to find their next read. They can create accounts, with the option of using Google Oauth, and view their orders and their statuses. Local storage and stripe are used to hold a cart and provide secure checkout. Admin functionality for editing and adding inventory and viewing all orders and order statuses. lalalalla aaaaaaaa",
-    title: "Book Haven"
+      "I am a total foodie and an environmentalist with a passion for local, organic, sustainable, and responsibly sourced food. Thus, I studied environmental science with a focus in world agriculture and food production at the University of California, Santa Barbara. Upon graduating in June of 2016, I landed a job in the food and beverage industry. I started as a media assistant  and worked my way to a sales analyst role.",
+    title: "Environmentalist"
   }
 ];
 
@@ -105,16 +105,17 @@ class WhatIDo extends React.Component {
                 <div
                   style={{
                     width: "20em",
-                    height: "30%",
+                    height: "35%",
                     overflow: "auto"
                   }}
                 >
                   <p
-                    style={{
-                      ":hover": { visibility: "visible" },
-                      ":focus": { visibility: "visible" },
-                      color: "#777777"
-                    }}
+                    style={styles.descParagraph}
+                    // style={{
+                    //   ":hover": { visibility: "visible" },
+                    //   ":focus": { visibility: "visible" },
+                    //   color: "#777777"
+                    // }}
                   >
                     {projects[this.state.currentProject].fullDesc}
                   </p>
@@ -136,7 +137,7 @@ class WhatIDo extends React.Component {
 }
 
 const styles = {
-  "@media screen and (max-width: 600px)": {
+  "@media screen and (max-width: 850px)": {
     position: "relative",
     padding: "0 32px 0 32px"
   },
@@ -170,12 +171,13 @@ const styles = {
     borderRadius: "1%"
   },
   description: {
+    direction: "rtl",
     textAlign: "right",
     justifyContent: "flex-end",
     flex: "1.5",
     width: "50%",
     zIndex: "2",
-    padding: "0% 0% 0% 15%"
+    padding: "0% 5% 0% 0%"
   },
   box: {
     height: "90%",
@@ -187,6 +189,10 @@ const styles = {
     display: "block",
     backgroundColor: "#dbe9ff",
     borderRadius: "1%"
+  },
+  descParagraph: {
+    color: "#777777",
+    padding: "0 5% 0 0"
   }
 };
 

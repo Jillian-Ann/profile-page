@@ -5,7 +5,7 @@
   z-index: 0;
   height: 100%;
   min-height: 100vh;
-  margin: 20% 0% 0% 0%;
+  margin: 0% 0% 0% 0%;
 }
 
 .introTitle {
@@ -15,7 +15,6 @@
   z-index: 3;
   display: block;
   align-items: flex-end;
-  margin: 90px;
 }
 
 .introTitle h1 {
@@ -55,8 +54,191 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .mainIntro {
     margin-top: -0.25%;
+  }
+  .introWrapper .container .name span {
+    display: inline-block;
+    font-size: 2em;
+    color: black;
+    transform: translateY(64px);
+  }
+} */
+
+/* .element {
+  align-self: "center";
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  animation: pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
+  border-radius: 100%;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(150px, 0);
+  }
+
+  80% {
+    transform: translate(-150px, 0);
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+/* @keyframes onLoad {
+  from {
+    background: black;
+  }
+  to {
+    background: white;
+  }
+} */
+/* body {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.1em;
+  font-weight: 400;
+  background: #fff;
+  animation: onLoad 0.5s ease 0s forwards;
+} */
+.introWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.introWrapper .container {
+  /* height: 64px; */
+  position: relative;
+}
+.introWrapper .container .name {
+  margin-bottom: 10px;
+  position: relative;
+  height: 64px;
+  overflow: hidden;
+  padding-top: 30px;
+}
+@keyframes loadName {
+  from {
+    transform: translateY(64px);
+  }
+  to {
+    transform: translateY(-60px);
+  }
+}
+.introWrapper .container .name span {
+  display: inline-block;
+  font-size: 4em;
+  color: black;
+  transform: translateY(64px);
+  overflow: visible;
+}
+.introWrapper .container .name span:nth-child(1) {
+  animation: loadName 0.5s ease 1s forwards;
+}
+.introWrapper .container .name span:nth-child(2) {
+  animation: loadName 0.5s ease 1.15s forwards;
+}
+.introWrapper .container .name span:nth-child(3) {
+  animation: loadName 0.5s ease 1.3s forwards;
+}
+.introWrapper .container .name span:nth-child(4) {
+  animation: loadName 0.5s ease 1.45s forwards;
+}
+.introWrapper .container .name span:nth-child(6) {
+  animation: loadName 0.5s ease 1.6s forwards;
+}
+.introWrapper .container .name span:nth-child(7) {
+  animation: loadName 0.5s ease 1.75s forwards;
+}
+.introWrapper .container .name span:nth-child(8) {
+  animation: loadName 0.5s ease 1.9s forwards;
+}
+.introWrapper .container .name span:nth-child(9) {
+  animation: loadName 0.5s ease 2.05s forwards;
+}
+.introWrapper .container .name span:nth-child(10) {
+  animation: loadName 0.5s ease 2.2s forwards;
+}
+.introWrapper .container .name span:nth-child(11) {
+  animation: loadName 0.5s ease 2.35s forwards;
+}
+
+.introWrapper .container .name span:nth-child(12) {
+  animation: loadName 0.5s ease 2.5s forwards;
+}
+
+.introWrapper .container .name span:nth-child(13) {
+  animation: loadName 0.5s ease 2.65s forwards;
+}
+
+@keyframes loadLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.introWrapper .container .line {
+  height: 4px;
+  background: linear-gradient(to right, #f1e0d3 0%, #dbe9ff 100%);
+  width: 0%;
+  border-radius: 50px;
+  animation: loadLine 0.8s ease 2.2s forwards;
+}
+@keyframes fadeSubIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.introWrapper .container .sub {
+  margin-top: 15px;
+  animation: fadeSubIn 10.5s;
+}
+.introrWapper .container .sub p {
+  opacity: 0;
+  color: #fff;
+  letter-spacing: 4px;
+  animation: fadeSubIn 0.5s ease 2.4s forwards;
+}
+
+@media only screen and (max-width: 850px) {
+  .mainIntro {
+    margin-top: -0.25%;
+  }
+  .introWrapper .container .name span {
+    display: inline-block;
+    font-size: 2em;
+    color: black;
+    transform: translateY(64px);
+  }
+  @keyframes loadName {
+    from {
+      transform: translateY(64px);
+    }
+    to {
+      transform: translateY(0px);
+    }
   }
 }
