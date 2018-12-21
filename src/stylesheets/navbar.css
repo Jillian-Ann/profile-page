@@ -52,8 +52,12 @@ a:hover {
   ul {
     left: 0%;
     padding-left: 0;
+    justify-content: space-between;
   }
   li {
     margin: 0 1em;
+  }
+  header {
+    justify-content: center;
   }
 }

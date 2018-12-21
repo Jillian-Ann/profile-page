@@ -1,18 +1,20 @@
 import React from "react";
+import MediaQuery from "react-responsive";
 import Stepper from "./Stepper";
-import fullArtemis from "../images/fulls/artemis.jpg";
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
 
 import fullstack from "../images/fullstack.jpg";
 import salesanalyst from "../images/salesanalyst.jpg";
 import ucsb from "../images/ucsb.png";
+import resume from "../resume.pdf";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../stylesheets/about.css";
 
 const projects = [
   {
@@ -85,32 +87,40 @@ class WhatIDo extends React.Component {
           minHeight: "100vh"
         }}
       >
-        <div style={styles.div}>
-          <h2 style={styles.title}>
+        <div className="aboutDiv">
+          <h2 className="aboutTitle">
             My <strong style={{ color: "black" }}>Background</strong>
           </h2>
-          <section style={styles.section}>
-            <div style={styles.projectDiv}>
-              <div style={styles.description}>
+          <section className="aboutSection">
+            <MediaQuery query="(max-width: 850px)">
+              <Stepper
+                changeProject={this.changeProject}
+                previousProject={this.previousProject}
+                nextProject={this.nextProject}
+                projects={projects}
+              />
+            </MediaQuery>
+            <div className="aboutProjectDiv">
+              <div className="aboutDescription">
                 <h1>{projects[this.state.currentProject].title}</h1>
-                <IconButton aria-label="website">
-                  <FontAwesomeIcon icon={faLink} />
-                </IconButton>
-                <IconButton aria-label="git-repo">
-                  <FontAwesomeIcon icon={faGithub} />
-                </IconButton>
-                <IconButton aria-label="youtube">
-                  <FontAwesomeIcon icon={faYoutubeSquare} />
-                </IconButton>
-                <div
-                  style={{
-                    width: "20em",
-                    height: "35%",
-                    overflow: "auto"
-                  }}
-                >
+                <a href={resume}>
+                  <IconButton aria-label="website">
+                    <FontAwesomeIcon icon={faFile} />
+                  </IconButton>
+                </a>
+                <a href="https://github.com/Jillian-Ann">
+                  <IconButton aria-label="git-repo">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </IconButton>
+                </a>
+                <a href="https://www.linkedin.com/in/jillianmclaren/">
+                  <IconButton aria-label="youtube">
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </IconButton>
+                </a>
+                <div className="aboutParagraphText">
                   <p
-                    style={styles.descParagraph}
+                    className="aboutDescParagraph"
                     // style={{
                     //   ":hover": { visibility: "visible" },
                     //   ":focus": { visibility: "visible" },
@@ -121,13 +131,15 @@ class WhatIDo extends React.Component {
                   </p>
                 </div>
               </div>
-              <Stepper
-                changeProject={this.changeProject}
-                previousProject={this.previousProject}
-                nextProject={this.nextProject}
-                projects={projects}
-              />
-              <div style={styles.box} />
+              <MediaQuery query="(min-width: 850px)">
+                <Stepper
+                  changeProject={this.changeProject}
+                  previousProject={this.previousProject}
+                  nextProject={this.nextProject}
+                  projects={projects}
+                />
+              </MediaQuery>
+              <div className="aboutBox" />
             </div>
           </section>
         </div>
@@ -135,125 +147,5 @@ class WhatIDo extends React.Component {
     );
   }
 }
-
-const styles = {
-  "@media screen and (max-width: 850px)": {
-    position: "relative",
-    padding: "0 32px 0 32px"
-  },
-  section: {
-    display: "block"
-  },
-  div: {
-    position: "relative",
-    padding: "0 32px 0 32px"
-  },
-  title: {
-    color: "#777777",
-    letterSpacing: "0.3em",
-    top: "30px",
-    right: "-20%",
-    textTransform: "uppercase",
-    fontSize: "6vw",
-    lineHeight: "1em",
-    position: "relative",
-    zIndex: "3"
-  },
-  projectDiv: {
-    display: "flex"
-  },
-  projectPic: {
-    backgroundColor: "white",
-    width: "50%",
-    flex: "1",
-    position: "relative",
-    zIndex: "2",
-    borderRadius: "1%"
-  },
-  description: {
-    direction: "rtl",
-    textAlign: "right",
-    justifyContent: "flex-end",
-    flex: "1.5",
-    width: "50%",
-    zIndex: "2",
-    padding: "0% 5% 0% 0%"
-  },
-  box: {
-    height: "90%",
-    position: "absolute",
-    top: "-1vh",
-    left: "0",
-    width: "70%",
-    zIndex: "1",
-    display: "block",
-    backgroundColor: "#dbe9ff",
-    borderRadius: "1%"
-  },
-  descParagraph: {
-    color: "#777777",
-    padding: "0 5% 0 0"
-  }
-};
-
-// const styles = {
-//   section: {
-//     // position: "absolute",
-//     display: "block",
-//     // verticalAlign: "baseline",
-//     color: "#232323"
-//     // top: "1000px"
-//   },
-//   div: {
-//     right: "1%",
-//     position: "absolute",
-//     padding: "10% 32px",
-//     maxWidth: "1184px",
-//     margin: "0 auto"
-//   },
-//   title: {
-//     left: "-200px",
-//     textAlign: "right",
-//     textTransform: "uppercase",
-//     fontSize: "64px",
-//     lineHeight: "1em",
-//     position: "relative",
-//     zIndex: "3"
-//   },
-//   projectDiv: {
-//     display: "flex",
-//     flexDirection: "row",
-//     alignItems: "flex-end",
-//     justifyContent: "flex-end"
-//   },
-//   projectPic: {
-//     width: "50%",
-//     flex: "1",
-//     left: "-200px",
-//     position: "relative",
-//     zIndex: "2",
-//     borderRadius: "1%"
-//   },
-//   description: {
-//     marginLeft: "-10%",
-//     flex: "1",
-//     width: "300px",
-//     zIndex: "2",
-//     padding: "10% 0% 10% 10%"
-//   },
-//   box: {
-//     height: "70%",
-//     transform: "translate(-110%)",
-//     position: "absolute",
-//     alignSelf: "end",
-//     top: "10%",
-//     right: "-250px",
-//     width: "65%",
-//     zIndex: "1",
-//     display: "block",
-//     backgroundColor: "#dbe9ff",
-//     borderRadius: "1%"
-//   }
-// };
 
 export default WhatIDo;

@@ -140,11 +140,12 @@ class Projects extends React.Component {
                   </a>
                 )}
                 <div
-                  style={{
-                    width: "20em",
-                    height: "35%",
-                    overflow: "auto"
-                  }}
+                  className="paragraphText"
+                  // style={{
+                  //   width: "20em",
+                  //   height: "35%",
+                  //   overflow: "auto"
+                  // }}
                 >
                   <p
                     className="descParagraph"
