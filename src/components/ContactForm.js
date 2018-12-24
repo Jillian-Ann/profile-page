@@ -48,8 +48,16 @@ class Contact extends React.Component {
   handleSubmit = async evt => {
     evt.preventDefault();
     await axios.post(
-      "https://jj8dtjhftj.execute-api.us-east-1.amazonaws.com/default",
-      this.state
+      "https://jj8dtjhftj.execute-api.us-east-1.amazonaws.com/default/ContactFormLambda",
+      this.state,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept",
+          "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, OPTIONS"
+        }
+      }
     );
     this.setState({
       message: "",
@@ -57,6 +65,7 @@ class Contact extends React.Component {
       email: "",
       subject: ""
     });
+    alert("email successfully sent");
   };
 
   render() {
