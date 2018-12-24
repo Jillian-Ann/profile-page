@@ -1,6 +1,5 @@
 import React from "react";
 import Stepper from "./Stepper";
-import { Link } from "react-router-dom";
 
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -139,23 +138,8 @@ class Projects extends React.Component {
                     </IconButton>
                   </a>
                 )}
-                <div
-                  className="paragraphText"
-                  // style={{
-                  //   width: "20em",
-                  //   height: "35%",
-                  //   overflow: "auto"
-                  // }}
-                >
-                  <p
-                    className="descParagraph"
-                    // style={{
-                    //   ":hover": { visibility: "visible" },
-                    //   ":focus": { visibility: "visible" },
-                    //   color: "#777777",
-                    //   padding: "0 5% 0 0"
-                    // }}
-                  >
+                <div className="paragraphText">
+                  <p className="descParagraph">
                     {projects[this.state.currentProject].fullDesc}
                   </p>
                 </div>

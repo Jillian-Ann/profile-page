@@ -92,7 +92,7 @@ class WhatIDo extends React.Component {
             My <strong style={{ color: "black" }}>Background</strong>
           </h2>
           <section className="aboutSection">
-            <MediaQuery query="(max-width: 850px)">
+            <MediaQuery query="(max-width: 750px)">
               <Stepper
                 changeProject={this.changeProject}
                 previousProject={this.previousProject}
@@ -119,19 +119,12 @@ class WhatIDo extends React.Component {
                   </IconButton>
                 </a>
                 <div className="aboutParagraphText">
-                  <p
-                    className="aboutDescParagraph"
-                    // style={{
-                    //   ":hover": { visibility: "visible" },
-                    //   ":focus": { visibility: "visible" },
-                    //   color: "#777777"
-                    // }}
-                  >
+                  <p className="aboutDescParagraph">
                     {projects[this.state.currentProject].fullDesc}
                   </p>
                 </div>
               </div>
-              <MediaQuery query="(min-width: 850px)">
+              <MediaQuery query="(min-width: 750px)">
                 <Stepper
                   changeProject={this.changeProject}
                   previousProject={this.previousProject}

@@ -34,22 +34,6 @@ class Intro extends React.Component {
               </div>
             </div>
           </div>
-          {/* <h1>
-            <strong style={{ color: "#777777" }}>Hi, I'm </strong>
-          </h1>
-          <h1>Jillian</h1>
-        </div>
-        <div className="typewriter">
-          <h1>
-            Environmentalist{" "}
-            <strong style={{ color: "#777777" }}>turned</strong> software
-            engineer{" "}
-            <strong style={{ color: "#777777" }}>
-              creating intuitive and dynamic{" "}
-            </strong>
-            UIs
-            <strong style={{ color: "#777777" }}> inspired by </strong> nature.
-          </h1> */}
         </div>
       </div>
     );

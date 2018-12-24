@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import "../stylesheets/contactForm.css";
@@ -29,19 +31,33 @@ class Contact extends React.Component {
     super();
     this.state = {
       message: "",
-      name: "",
-      email: ""
+      // name: "",
+      email: "",
+      subject: ""
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = name => evt => {
+  handleChange = evt => {
     this.setState({
-      [name]: evt.target.value
+      [evt.target.name]: evt.target.value
     });
   };
 
-  handlClick = evt => {};
+  handleSubmit = async evt => {
+    evt.preventDefault();
+    await axios.post(
+      "https://jj8dtjhftj.execute-api.us-east-1.amazonaws.com/default",
+      this.state
+    );
+    this.setState({
+      message: "",
+      // name: "",
+      email: "",
+      subject: ""
+    });
+  };
 
   render() {
     // const { classes } = this.props;
@@ -49,7 +65,7 @@ class Contact extends React.Component {
       duration: 1000
     });
     return (
-      <div data-aos="fade-down" className="inner contact">
+      <div data-aos="fade-in" className="inner contact">
         <div className="greeting">
           <h2>SAY HELLO</h2>
           <h3>
@@ -70,15 +86,17 @@ class Contact extends React.Component {
                 required="required"
                 className="form"
                 placeholder="Name"
+                // onChange={this.handleChange}
               />
 
               <input
                 type="email"
-                name="mail"
+                name="email"
                 id="mail"
                 required="required"
                 className="form"
                 placeholder="Email"
+                onChange={this.handleChange}
               />
 
               <input
@@ -88,6 +106,7 @@ class Contact extends React.Component {
                 required="required"
                 className="form"
                 placeholder="Subject"
+                onChange={this.handleChange}
               />
             </div>
             <div
@@ -99,6 +118,7 @@ class Contact extends React.Component {
                 id="message"
                 className="form textarea"
                 placeholder="Message"
+                onChange={this.handleChange}
               />
             </div>
             <div class="relative fullwidth col-xs-12">
@@ -107,7 +127,7 @@ class Contact extends React.Component {
                 id="submit"
                 name="submit"
                 className="form-btn semibold"
-                // onClick=""
+                onClick={this.handleSubmit}
               >
                 Send Message
               </button>
@@ -121,39 +141,6 @@ class Contact extends React.Component {
           </div>
         </div>
       </div>
-      //   <div className="mainContact">
-      //     <form className={classes.container} noValidate autoComplete="off">
-      //       <TextField
-      //         required
-      //         id="standard-name"
-      //         label="Name"
-      //         className={classes.textField}
-      //         value={this.state.name}
-      //         onChange={this.handleChange("name")}
-      //         margin="normal"
-      //       />
-      //       <TextField
-      //         required
-      //         id="standard-email"
-      //         label="email"
-      //         className={classes.textField}
-      //         value={this.state.email}
-      //         onChange={this.handleChange("email")}
-      //         margin="normal"
-      //       />
-      //       <TextField
-      //         required
-      //         fullwidth
-      //         multiline
-      //         id="standard-message"
-      //         label="message"
-      //         className={classes.textField}
-      //         value={this.state.email}
-      //         onChange={this.handleChange("message")}
-      //         margin="normal"
-      //       />
-      //     </form>
-      //   </div>
     );
   }
 }

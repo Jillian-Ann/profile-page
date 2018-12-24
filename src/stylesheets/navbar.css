@@ -42,7 +42,7 @@ a:hover {
   transition: transform 250ms ease-in-out 250ms;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 750px) {
   .icon {
     display: none;
   }
@@ -56,6 +56,26 @@ a:hover {
   }
   li {
     margin: 0 1em;
+  }
+  header {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .icon {
+    display: none;
+  }
+  header {
+    padding: 1px;
+  }
+  ul {
+    left: 0%;
+    padding-left: 0;
+    justify-content: space-between;
+  }
+  li {
+    margin: 0 0.5em;
   }
   header {
     justify-content: center;

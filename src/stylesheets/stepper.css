@@ -9,7 +9,7 @@
   align-self: center;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 750px) {
   .main {
     display: flex;
     width: 100%;

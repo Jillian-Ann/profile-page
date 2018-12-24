@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import MobileStepper from "@material-ui/core/MobileStepper";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
@@ -12,25 +9,13 @@ import { autoPlay } from "react-swipeable-views-utils";
 import { Pause } from "@material-ui/icons";
 
 import "../stylesheets/stepper.css";
-import artemis from "../images/fulls/artemis.jpg";
-import nutrivision from "../images/fulls/nutrivision.jpg";
-import bookhaven from "../images/fulls/bookhaven.jpg";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const styles = theme => ({
-  // header: {
-  //   display: "flex",
-  //   alignItems: "center",
-  //   height: 50,
-  //   paddingLeft: theme.spacing.unit * 4,
-  //   backgroundColor: theme.palette.background.default
-  // },
   img: {
     width: "100%",
     flex: "1",
-    // alignSelf: "flex-end",
-    // marginLeft: "48px",
     position: "relative",
     zIndex: "2",
     borderRadius: "1%"
