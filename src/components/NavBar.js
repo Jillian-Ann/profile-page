@@ -1,33 +1,31 @@
 import React from "react";
+import icon from "../images/icon.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../stylesheets/navbar.css";
 
 class Navbar extends React.Component {
   render() {
+    AOS.init({
+      duration: 2000
+    });
     return (
-      <header
-        style={{
-          display: "flex",
-          position: "fixed",
-          padding: "10px",
-          width: "100vw",
-          color: "#fff",
-          backgroundColor: "rgba(37, 37, 37, 0.8)",
-          zIndex: "2"
-        }}
-      >
-        <ul
-          style={{
-            width: "90%",
-            listStyleType: "none",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between"
-          }}
-        >
-          <li>Intro</li>
-          <li>What I Do</li>
-          <li>Who I Am</li>
-          <li>My Work</li>
-          <li>Say Hello</li>
+      <header data-aos="fade-in">
+        <ul>
+          <img className="icon" alt="icon" src={icon} />
+          <li>
+            <a href="#intro">Intro</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            {" "}
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </header>
     );

@@ -1,38 +1,39 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../stylesheets/intro.css";
 
 class Intro extends React.Component {
   render() {
+    AOS.init({
+      duration: 2000
+    });
     return (
-      <div
-        style={{
-          display: "flex",
-          height: "50vh",
-          justifyContent: "flex-start",
-          zIndex: 0
-        }}
-      >
-        <div
-          style={{
-            padding: ".5em",
-            position: "absolute",
-            // top: "2vh",
-            color: "black",
-            zIndex: "1",
-            fontSize: "4.3vw",
-            fontWeight: "400"
-          }}
-        >
-          <p>
-            Environmentalist turned software engineer creating intuitive and
-            dynamic UIs inspired by nature.
-          </p>
-          {/* <p style={{ fontSize: "2vw" }}>
-              Specializing in JavaScript and the NERD stack. <br />
-              Proficient: JavaScript, Node/Express, React, React-Redux,
-              Sequelize/PostgreSQL, Git, GitHub, CSS, HTML5, Material-UI <br />
-              Knowledgable: React-Native, React-Native-Navigation, jQuery,
-              Socket.io, SQL, Mocha, Jasmine, Chai, Heroku, Bootstrap
-            </p> */}
+      <div data-aos="fade-in" className="mainIntro">
+        <div className="introTitle">
+          <div className="introWrapper">
+            <div className="container">
+              <div className="name">
+                <span>J</span>
+                <span>i</span>
+                <span>l</span>
+                <span>l</span>
+                <span>&nbsp;</span>
+                <span />
+                <span>M</span>
+                <span>c</span>
+                <span>L</span>
+                <span>a</span>
+                <span>r</span>
+                <span>e</span>
+                <span>n</span>
+              </div>
+              <div className="line" />
+              <div className="sub">
+                <p>Software Engineer</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

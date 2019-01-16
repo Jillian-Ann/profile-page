@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  width: 100%;
+  flex: 2;
+  /* margin-left: 48px; */
+  position: relative;
+  z-index: 2;
+  border-radius: 1%;
+  align-self: center;
+}
+
+@media only screen and (max-width: 750px) {
+  .main {
+    display: flex;
+    width: 100%;
+    flex: 2;
+    margin-top: 15%;
+    margin-left: 0px;
+    position: relative;
+    z-index: 2;
+    border-radius: 1%;
+    align-self: center;
+  }
+}

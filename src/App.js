@@ -1,30 +1,17 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 
-import Header from "./components/Header";
 import Navbar from "./components/NavBar";
 import Intro from "./components/Intro";
 import WhatIDo from "./components/What-I-Do";
-import Gallery from "./components/Projects";
-import PrimaryProject from "./components/PrimaryProject";
-import SecondaryProject from "./components/SecondaryProjects";
-import "./App.css";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import MyProjects from "./components/MyProjects";
+import ContactForm from "./components/ContactForm";
 
-import background from "./images/background.jpg";
-import { Parallax } from "react-parallax";
+import "./stylesheets/App.css";
 
-const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    primary: {
-      main: "#86c7bf"
-    },
-    secondary: {
-      main: "#FFF6F4"
-    }
-  }
-});
+import ScrollableAnchor from "react-scrollable-anchor";
+import { configureAnchors, goToTop, goToAnchor } from "react-scrollable-anchor";
+configureAnchors({ offset: -150, scrollDuration: 200 });
 
 class App extends Component {
   constructor() {
@@ -75,29 +62,25 @@ class App extends Component {
     const siteDescription = "Profile Page";
 
     return (
-      <MuiThemeProvider theme={theme}>
-        <Parallax bgImage={background} strength={500}>
-          <div style={{ backgroundColor: "#f1e0d3" }}>
-            <Helmet>
-              <title>{siteTitle}</title>
-              <meta name="description" content={siteDescription} />
-            </Helmet>
-            <div className="App" style={{ display: "flex" }}>
-              <div style={{ background: "white", flex: "1" }}>
-                <Header />
-              </div>
-              {/* <Navbar className="App-navbar" /> */}
-              <div style={{ padding: "40px", flex: "3" }}>
-                <Intro />
-                <PrimaryProject />
-                <SecondaryProject />
-                <Gallery />
-                <WhatIDo />
-              </div>
-            </div>
-          </div>
-        </Parallax>
-      </MuiThemeProvider>
+      <div style={{ width: "100%", overflowX: "hidden" }}>
+        <Helmet>
+          <title>{siteTitle}</title>
+          <meta name="description" content={siteDescription} />
+        </Helmet>
+        <Navbar />
+        <ScrollableAnchor id={"intro"}>
+          <Intro />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"projects"}>
+          <MyProjects />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"about"}>
+          <WhatIDo />
+        </ScrollableAnchor>
+        <ScrollableAnchor id={"contact"}>
+          <ContactForm />
+        </ScrollableAnchor>
+      </div>
     );
   }
 }
